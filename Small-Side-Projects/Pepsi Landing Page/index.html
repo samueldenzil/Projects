@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pepsi Landing Page</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section class="sec">
+      <!-- Navbar -->
+      <header>
+        <a href="#"><img class="logo" src="logo.png" alt="" /></a>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">What's New</a></li>
+          <li><a href="#">Newsletter</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </header>
+
+      <!-- Title -->
+      <div class="content">
+        <div class="textBox">
+          <h2>That's What<br /><span>I like</span></h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque est
+            quisquam quod, sapiente unde voluptatum maxime minus, nobis deserunt
+            quis molestias, sunt ut. Nesciunt harum fugit assumenda tempora
+            voluptates ratione.
+          </p>
+          <a href="#">View All Products</a>
+        </div>
+        <div class="imgBox">
+          <img class="pepsi" src="pepsi001.png" alt="" />
+        </div>
+      </div>
+
+      <ul class="thumb">
+        <li class="pepsi001"><img src="pepsi001.png" alt="" /></li>
+        <li class="pepsi002"><img src="pepsi002.png" alt="" /></li>
+        <li class="pepsi003"><img src="pepsi003.png" alt="" /></li>
+      </ul>
+
+      <ul class="sci">
+        <li>
+          <a href="#"><img src="facebook.png" alt="" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="twitter.png" alt="" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="instagram.png" alt="" /></a>
+        </li>
+      </ul>
+    </section>
+
+    <script>
+      image = document.querySelector(".pepsi");
+      for (var i = 0; i < document.querySelectorAll(".thumb li").length; i++) {
+        document
+          .querySelectorAll(".thumb li")
+          [i].addEventListener("click", function () {
+            image.setAttribute("src", this.getAttribute("class") + ".png");
+
+            switch (this.getAttribute("class")) {
+              case "pepsi001":
+                document.querySelector(".sec").style.backgroundColor = "#0062be";
+                break;
+              case "pepsi002":
+                document.querySelector(".sec").style.backgroundColor = "#e60c2c";
+                break;
+              case "pepsi003":
+                document.querySelector(".sec").style.backgroundColor = "#1e1e1e";
+                break;
+            }
+          });
+      }
+    </script>
+  </body>
+</html>
